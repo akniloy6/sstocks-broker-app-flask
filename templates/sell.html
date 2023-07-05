@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sell</title>
+  </head>
+  <body>
+    <h1>Sell {{ company_name }} Share from your account</h1>
+    <p>Current price: {{ share.price }} {{ share.currency }}</p>
+    <p>Available shares In your account: {{ shares_available }}</p>
+    <form method="post">
+      <label for="quantity">Quantity:</label>
+      <input type="number" name="quantity" id="quantity" min="1" max="{{ shares_available}}" required>
+      <br>
+      <button type="submit">Sell</button>
+    </form>
+    <p><a href="{{ url_for('index') }}">Go to Stocks Updates</a></p>
+  </body>
+</html>

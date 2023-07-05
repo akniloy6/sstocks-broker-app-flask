@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Information</title>
+</head>
+<body>
+  <h1>User Information</h1>
+  {% if user_data %}
+    <p><strong>Name:</strong> {{ user_data.name }}</p>
+    <p><strong>Email:</strong> {{ user_data.email }}</p>
+    <p><strong>Balance:</strong> {{ user_data.balance }}</p>
+    <p><strong>Shares:</strong></p>
+    {% for user, data in stocks.items() %}
+      <li>{{ user }}: {{ data }}</li>
+    {% endfor %}
+  {% else %}
+    <p>User not found.</p>
+  {% endif %}
+  <p><a href="{{ url_for('index') }}">Go to Stocks Updates</a></p>
+  <p><a href="{{ url_for('exchange_rate') }}">Check for local exchange rates</a></p>
+</body>
+</html>

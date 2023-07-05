@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency conversion</title>
+</head>
+<body>
+  <h1>Convert share price rate to your desired Currency</h1>
+  <form action="/exchange_rates" method="post">
+    <label for="currency">Current Currency</label>
+    <input type="text" name="currency" id="currency">
+    <label for="des_currency">desired Currency</label>
+    <input type="text" name="des_currency" id="des_currency">
+    <br>
+    <button type="submit">get_rates</button>
+  </form>
+  <p1>Converting from {{currency}} to {{des_currency}}</p1>
+  {% if exchange_rate %}
+    <p><strong>Exchange rates obtained from  currency conversion Web service between these two currencies:</strong> {{exchange_rate}}</p>
+  {% endif %}
+  {% if exchange_rate_realtime %}
+    <p><strong>Up-to-Date Exchange rates between these two currencies:</strong> {{exchange_rate_realtime}}</p>
+  {% endif %}
+
+
+
+  <p><a href="{{ url_for('users', u_id= u_id) }}">Go back to users account</a></p>
+  <p><a href="{{ url_for('index') }}">Go back to the share market</a></p>
+</body>
+</html>

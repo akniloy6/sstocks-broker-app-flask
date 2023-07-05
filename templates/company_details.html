@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Company Details</title>
+    <style>
+      table,tr,th,td {
+         border:1px solid black;
+      }
+   </style>
+  </head>
+  <body>
+    <h1>Details about {{company_details.company_name }}</h1>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">Company Name</th>
+          <th style="text-align: center">Symbol</th>
+          <th style="text-align: center">Available Shares</th>
+          <th style="text-align: center">Price</th>
+          <th style="text-align: center">Date Updated</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+      
+          <tr>
+            <td>{{ company_details.company_name }}</td>
+            <td>{{ company_details.symbol }}</td>
+            <td>{{ company_details.available_shares }}</td>
+            <td>{{ company_details.price }} {{ company_details.currency }}&nbsp;</td>
+            <td>{{ company_details.last_update }}</td>
+          </tr>
+    
+      </tbody>
+    </table>
+    <p><a href="{{ url_for('users', u_id= u_id) }}">Go to your profile</a></p>
+    <p><a href="{{ url_for('search') }}">Search stocks by your criteria</a></p>
+  </body>
+
+</html>

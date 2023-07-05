@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search </title>
+</head>
+<body>
+    <h1>Search stocks by preferred criteria</h1>
+    <form id="search-form">
+        <label for="search">Pick a search criteria:</label>
+        <select id="keyword" name="keyword">
+            <option value="highest_price" selected>highest_price</option>
+            <option value="company_details" >company_details</option>
+            
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <form id="company_name" style="display: none;">
+        <!-- we added a secondary form for taking the company name here -->
+        <label for="keyword">Type Symbol of the company:</label>
+        <input type="text" id="keyword" name="symbol">
+        <input type="submit" value="Submit">
+    </form>
+
+    
+    <p> Note: Please give valid company symbols for your search criteria</p>
+    <p><a href="{{ url_for('index') }}">Go to Stocks Updates</a></p>
+
+
+
+    <script>
+        // A javascript script to add an event listener for creating froms within forms
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            // prevent the form from submitting
+            
+            //here we get fetch the selected keyword from the drop down menu
+            var selectedValue = document.getElementById('keyword').value;
+            
+            // If keyword is company details. details of that company will be shown taking input from the 2nd form.
+            if (selectedValue === 'company_details') {
+                event.preventDefault(); 
+                document.getElementById('company_name').style.display = 'block';
+            }
+
+           
+
+    
+    // code to handle highest price search
+})
+        
+    </script>
+</body>
+</html>

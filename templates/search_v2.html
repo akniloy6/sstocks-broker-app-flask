@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search </title>
+</head>
+<body>
+    <h1>Search stocks by preferred criteria</h1>
+    <form id="search-form">
+        <label for="search">If you want to get stock prices</label>
+        <select id="keyword" name="keyword">
+            <option value="highest_price">highest_price</option>         
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <form id="company_name">
+     
+        <label for="symbol">Type Symbol of the company:</label>
+        <input type="text" id="symbol" name="symbol">
+        <input type="submit" value="Submit">
+    </form>
+
+    <p><a href="{{ url_for('index') }}">Go to Stocks Updates</a></p>
+</body>
+</html>

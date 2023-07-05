@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Shares</title>
+  </head>
+  <body>
+    <h1>Available Shares</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Symbol</th>
+          <th>Available Shares</th>
+          <th>Price</th>
+          <th>Date Updated</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for share in shares %}
+          <tr>
+            <td>{{ share.company_name }}</td>
+            <td>{{ share.symbol }}</td>
+            <td>{{ share.available_shares }}</td>
+            <td>{{ share.price }} {{ share.currency }}&nbsp;</td>
+            <td>{{ share.last_update }}</td>
+            <td>
+              <a href="/buy/{{ share.symbol }}">Buy</a>
+              <a href="/sell/{{ share.symbol }}">Sell</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p><a href="{{ url_for('users', u_id= u_id) }}">Go to your profile</a></p>
+    <p><a href="{{ url_for('search') }}">Search stocks by your criteria</a></p>
+  </body>
+
+</html>
