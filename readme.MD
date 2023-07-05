@@ -24,7 +24,7 @@ Another rest api from a public api provider rapidApi has been used to get real t
 
 Top Level Diagram of the project
 
-![alt text](https://github.com/akniloy6/stocks-broker-app-flask/blob/main/top level.drawio.png?raw=true)
+![alt text](https://github.com/akniloy6/stocks-broker-app-flask/blob/main/top%20level.drawio.png)
 
 
 
